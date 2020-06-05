@@ -1,0 +1,58 @@
+<html ng-app='ShopApp'>
+  <head>
+    <title>Shopping List Check Off</title>
+    <style>
+      .emptyMessage {
+        font-weight: bold;
+        color: red;
+        font-size: 1.2em;
+      }
+      li {
+        margin-bottom: 7px;
+        font-size: 1.2em;
+      }
+      li > button {
+        margin-left: 6px;
+      }
+      button  {
+        color: green;
+      }
+    </style>
+
+<script src="angular.min.js"></script>
+<script src="app.js"></script>
+
+  </head>
+<body>
+  <div class="container" ng-controller='ShopController'>
+
+  
+
+  <h1>Shopping List Check Off</h1>
+
+  <div class="row">
+
+    <!-- To Buy List -->
+    <div class="col-md-6" >
+     <h2>To Buy:</h2>
+     <ul>
+     
+      <li ng-repeat='item in items1'>Buy {{item.quantity}} of {{item.name}}<button ng-click='remove($index)'>Buy</button></li>
+
+     </ul>
+     <div class="emptyMessage" ng-if='isEmpty1()'>Everything is bought!</div>
+    </div>
+
+    <!-- Already Bought List -->
+    <div class="col-md-6">
+     <h2>Already Bought:</h2>
+     <ul>
+       <li ng-repeat='item in items2'>Bought {{item.quantity}} of {{item.name}}</li>
+     </ul>
+     <div class="emptyMessage" ng-if='isEmpty2()'>Nothing bought yet.</div>
+     </div>
+  </div>
+</div>
+
+</body>
+</html>
