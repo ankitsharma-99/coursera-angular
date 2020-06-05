@@ -24,7 +24,7 @@
 
   </head>
 <body>
-  <div class="container" ng-controller='ShopController'>
+  <div class="container" >
 
   
 
@@ -33,23 +33,25 @@
   <div class="row">
 
     <!-- To Buy List -->
-    <div class="col-md-6" >
+    <div class="col-md-6" ng-controller='ToBuyController as list1'>
+
+      
      <h2>To Buy:</h2>
      <ul>
      
-      <li ng-repeat='item in items1'>Buy {{item.quantity}} of {{item.name}}<button ng-click='remove($index)'>Buy</button></li>
+      <li ng-repeat='item in list1.items'>Buy {{item.quantity}} of {{item.name}}<button ng-click='list1.remove($index)'>Buy</button></li>
 
      </ul>
-     <div class="emptyMessage" ng-if='isEmpty1()'>Everything is bought!</div>
+     <div class="emptyMessage" ng-if='list1.isEmpty()'>Everything is bought!</div>
     </div>
 
     <!-- Already Bought List -->
-    <div class="col-md-6">
+    <div class="col-md-6" ng-controller='AlreadyBoughtController as list2'>
      <h2>Already Bought:</h2>
      <ul>
-       <li ng-repeat='item in items2'>Bought {{item.quantity}} of {{item.name}}</li>
+       <li ng-repeat='item in list2.items'>Bought {{item.quantity}} of {{item.name}}</li>
      </ul>
-     <div class="emptyMessage" ng-if='isEmpty2()'>Nothing bought yet.</div>
+     <div class="emptyMessage" ng-if='list2.isEmpty()'>Nothing bought yet.</div>
      </div>
   </div>
 </div>
