@@ -69,7 +69,7 @@ else
 			var foundItems=[];
 			for(var i=0;i<arr.length;i++)
 			{
-				var it=arr[i].name;
+				var it=arr[i].description;
 				
 				if(it.indexOf(searchTerm)!==-1)
 					foundItems.push(arr[i]);
