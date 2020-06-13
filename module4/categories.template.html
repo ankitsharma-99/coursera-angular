@@ -1,0 +1,6 @@
+<h3>Various categories are(clickable):</h3>
+<ul>
+  <li ng-repeat="item in $ctrl.allcat" ui-sref="items({catId:item.short_name})">
+    {{ item.short_name}}
+  </li>
+</ul>
