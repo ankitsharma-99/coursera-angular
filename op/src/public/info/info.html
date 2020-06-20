@@ -1,0 +1,14 @@
+<div ng-app='public'>
+<div ng-if="infoCtrl.hasSignUp">
+      Favourite Dish Info:<br>
+      DishName:{{ infoCtrl.user.dishName }}<br>
+      ShortName:{{infoCtrl.user.shortName}}<br>
+      Description:{{ infoCtrl.user.description }}<br>
+       <img width="200" height="200" ng-src="{{infoCtrl.basePath}}/images/{{infoCtrl.user.shortName}}.jpg" alt="{{infoCtrl.user.dishName}}">
+
+</div>
+<div ng-if="!infoCtrl.hasSignUp">
+	Not Signed Up Yet.
+	<a ui-sref="public.signup"> Sign up Now!</a>
+</div>
+</div>
