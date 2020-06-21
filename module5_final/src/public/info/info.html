@@ -1,6 +1,14 @@
 <div ng-app='public'>
 <div ng-if="infoCtrl.hasSignUp">
-      Favourite Dish Info:<br>
+
+	<h2>My Info</h2>
+	FirstName:{{infoCtrl.user.firstName}}<br>
+      Lastname:{{infoCtrl.user.lastName}}  <br>
+        Email:{{infoCtrl.user.email}}<br>
+        Phone:{{infoCtrl.user.phone}}<br>
+       
+
+      <h2>Favourite Dish Info</h2><br>
       DishName:{{ infoCtrl.user.dishName }}<br>
       ShortName:{{infoCtrl.user.shortName}}<br>
       Description:{{ infoCtrl.user.description }}<br>
